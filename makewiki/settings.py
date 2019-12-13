@@ -25,7 +25,7 @@ SECRET_KEY = '1yct-t!2bnkgc7j59z+9cdd2k)@y+ftqor$!aya()3if^cnlo-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'galkomakewiki.herokuapp.com']
 
 
 # Application definition
@@ -129,6 +129,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 # wiki app settings
 WIKI_PAGE_TITLE_MAX_LENGTH = 600
 
@@ -136,6 +139,8 @@ WIKI_PAGE_TITLE_MAX_LENGTH = 600
 # Where to redirect during authentication
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
+DEFAULT_LOGOUT_URL = '/'
+
 
 # Required for Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
